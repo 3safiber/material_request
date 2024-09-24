@@ -14,7 +14,7 @@
             <group>
               <field name="to_date" />
             </group>
-            <field name="type"></field>
+            <field name="type" />
           </group>
           <footer>
             <button name="action_print" string="Print"

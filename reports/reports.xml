@@ -1,0 +1,31 @@
+<odoo>
+
+  <record id="pdf_report_action_button" model="ir.actions.report">
+    <field name="name">PDF Report</field>
+    <field name="model">material.request</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">material_request.pdf_report_button</field>
+    <field name="report_file">material_request.pdf_report_button</field>
+  </record>
+
+  <record id="pdf_report_action" model="ir.actions.report">
+    <field name="name">PDF Report</field>
+    <field name="model">material.request</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">material_request.pdf_report</field>
+    <field name="report_file">material_request.pdf_report</field>
+    <field name="binding_model_id" ref="model_material_request" />
+    <field name="binding_type">report</field>
+  </record>
+
+  <record id="excel_report_action" model="ir.actions.report">
+    <field name="name">Material Requests</field>
+    <field name="model">material.request</field>
+    <field name="report_type">xlsx</field>
+    <field name="report_name">material_request.excel_report</field>
+    <field name="report_file">material_request.excel_report</field>
+    <field name="binding_type">report</field>
+  </record>
+
+
+</odoo>

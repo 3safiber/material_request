@@ -1,0 +1,48 @@
+<odoo>
+
+  <template id="pdf_report_button">
+    <t t-call="web.html_container">
+      <t t-call="web.external_layout">
+        <t t-foreach="material_request" t-as="rec">
+          <div style="page-break-after: always;">
+            <h1 class="text-center border-bottom pb-2">
+              <t t-esc="rec['ref']" />
+            </h1>
+            <h2 class="text-center">
+              <t t-esc="rec['request_date']" />
+            </h2>
+            <h3 class="text-center"> Department: <t t-esc="rec['department_id']" />
+            </h3>
+            <h3 class="text-center"> Vendor: <t t-esc="rec['vendor_id']" />
+            </h3>
+            <div class="container mt-4">
+              <h3>Products</h3>
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <t t-foreach="rec['material_request_line_ids']" t-as="line">
+                    <tr>
+                      <td>
+                        <t t-esc="line['product_id'][1]" />
+                      </td>
+                      <td>
+                        <t t-esc="line['quantity']" />
+                      </td>
+                    </tr>
+                  </t>
+                </tbody>
+              </table>
+              <div class="mb-4"></div>
+            </div>
+          </div>
+        </t>
+      </t>
+    </t>
+  </template>
+
+</odoo>
